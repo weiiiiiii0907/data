@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+
+char *getword(char *text, char *word){
+    char *ptr = text;
+    char *qtr = word;
+    char *textend;
+    textend = text + strlen(text);
+    while(isspace(*ptr)) {
+        ptr++;
+    }
+    while(!isspace(*ptr) && ptr <textend){
+        *qtr = *ptr;
+        qtr++; 
+        ptr++;
+    }
+    *qtr = '\0';
+    if(word[0] == '\0') return NULL; 
+    return ptr;
+}
+
+int main(){
+    char word[1024];
+    char *ptr;
+    char line[8096];
+    int cnt=0,engcnt[26];
+    for(int i=0;i<26;i++){
+        engcnt[i]=0;
+    }
+    while(fgets(line,1024,stdin)){
+        int l=strlen(line);
+        for(int i=0;i<l;i++){
+            line[i]=tolower(line[i]);
+            engcnt[line[i]-'a']++;
+        }
+        ptr=line;
+        while((ptr=getword(ptr,word))!=NULL){
+            cnt++;
+        }
+        printf("%d\n",cnt);
+        for(int i=0;i<26;i++){
+            if(engcnt[i]>0){
+                printf("%c : %d\n",'a'+i,engcnt[i]);
+            }
+        }
+    }
+    
+}

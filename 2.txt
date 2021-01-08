@@ -1,0 +1,10 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+    int n;
+    while(scanf("%d",&n)!=EOF){
+    	double f=n*1.6;
+    	printf("%.1f\n",f);
+    }
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    long long int n,m;
+    while(scanf("%lld%lld",&n,&m)!=EOF){
+        long long int max=0,t;
+        if(n>m){
+            t=n;
+        } 
+        else{
+            t=m;
+        }
+        for(int i=1;i<=t;i++){
+            if(n%i==0&&m%i==0) max=i;
+        }
+        printf("%lld\n",max);
+    }
+    return 0;
+}

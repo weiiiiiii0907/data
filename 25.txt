@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    cin.ignore(1,'\n');
+    for(int i=0;i<n;i++){
+        string word;
+        int sum=0;
+        getline(cin,word);
+        for(int i=0;i<word.length();i++){
+            if((int)word[i]>31&&(int)word[i]<127){
+                sum+=(int)word[i];
+            }
+        }
+        cout<<sum<<endl;
+    }
+    return 0;
+} 

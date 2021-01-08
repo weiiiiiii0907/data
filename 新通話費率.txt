@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int n,m;
+    double total=0.0;
+    scanf("%d,%d",&n,&m);
+    if(n==186){
+        total=m*0.09;
+        if(total<=n) total=n;
+        else if(total<=n*2) total*=0.9;
+        else total*=0.8;
+    }else if(n==386){
+        total=m*0.08;
+        if(total<=n) total=n;
+        else if(total<=n*2) total*=0.8;
+        else total*=0.7;
+    }else if(n==586){
+        total=m*0.07;
+        if(total<=n) total=n;
+        else if(total<=n*2) total*=0.7;
+        else total*=0.6;
+    }else if(n==986){
+        total=m*0.06;
+        if(total<=n) total=n;
+        else if(total<=n*2) total*=0.6;
+        else total*=0.5;
+    }
+    int t=(int)(total+0.5);
+    printf("%d\n",t);
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int h1,m1,h2,m2;
+    scanf("%d %d\n%d %d",&h1,&m1,&h2,&m2);
+    int t1=h1*60+m1,t2=h2*60+m2;
+    int total=t2-t1;
+    if(total<=120){
+        total=(total/30)*30;
+        printf("%d\n",total);
+    }else if(total>120&&total<=240){
+        total-=120;
+        total=120+(total/30)*40;
+        printf("%d\n",total);
+    }else if(total>240){
+        total-=240;
+        total=120+160+(total/30)*60;
+        printf("%d\n",total);
+    }
+}

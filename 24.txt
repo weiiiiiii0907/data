@@ -1,0 +1,17 @@
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <math.h>  
+int main(){
+    long double r;
+    long int n,p;
+    scanf("%Lf",&r);
+    scanf("%ld%ld",&n,&p);
+    long double total=0;
+    for(int i=0;i<n;i++){
+        total+=p;
+        total*=(1.0+r);
+    }
+    long long int s=total;
+    printf("%lld\n",s);
+    return 0;
+}  

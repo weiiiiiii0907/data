@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int n;
+    double nonsum=0,sum=0;
+    while(scanf("%d",&n)!=EOF){
+        if(n<=120){
+            sum=n*2.10;
+            printf("Summer months:%.2f\n",sum);
+            printf("Non-Summer months:%.2f\n",sum);
+        }else if(n>120&&n<=330){
+            n-=120;
+            sum=120*2.10+n*3.02;
+            nonsum=120*2.10+n*2.68;
+            printf("Summer months:%.2f\n",sum);
+            printf("Non-Summer months:%.2f\n",nonsum);
+        }else if(n>330&&n<=500){
+            n-=330;
+            sum=120*2.10+210*3.02+n*4.39;
+            nonsum=120*2.10+210*2.68+n*3.61;
+            printf("Summer months:%.2f\n",sum);
+            printf("Non-Summer months:%.2f\n",nonsum);
+        }else if(n>500&&n<=700){
+            n-=500;
+            sum=120*2.10+210*3.02+170*4.39+n*4.97;
+            nonsum=120*2.10+210*2.68+170*3.61+n*4.01;
+            printf("Summer months:%.2f\n",sum);
+            printf("Non-Summer months:%.2f\n",nonsum);
+        }else if(n>700){
+            n-=700;
+            sum=120*2.10+210*3.02+170*4.39+200*4.97+n*5.63;
+            nonsum=120*2.10+210*2.68+170*3.61+200*4.01+n*4.50;
+            printf("Summer months:%.2f\n",sum);
+            printf("Non-Summer months:%.2f\n",nonsum);
+        }
+    }
+}

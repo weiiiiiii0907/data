@@ -1,0 +1,19 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+ 
+int main(){ 
+    long double cm; 
+    int sex; 
+    while(scanf("%Lf %d",&cm,&sex)!=EOF){ 
+        if(sex==1){ 
+            long double w; 
+            w=(cm-80)*0.7; 
+            printf("%.1Lf\n",w); 
+        }
+        if(sex==2){ 
+            long double w; 
+            w=(cm-70)*0.6; 
+            printf("%.1Lf\n",w); 
+        }
+    }
+}
